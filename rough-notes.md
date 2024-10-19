@@ -50,19 +50,27 @@ zlib1g-dev
 
 ## quiz-history
 ```
-# these seem to be needed by quiz
-sudo apt install git
+# needed by quiz - but choose right architecture
 sudo apt install qemu-system-x86
-sudo apt install mmdebstrap
-sudo apt install linux-headers-$(uname -r) build-essential
-sudo apt install vim
-sudo apt install curl
-sudo apt install libssl-dev
-sudo apt install bc
-sudo apt install libelf-dev
-sudo apt install bison flex
-sudo apt install genext2fs
-sudo apt install rsync
+sudo apt install qemu-system-arm64
+
+
+# these seem to be needed by quiz
+sudo apt install \
+git \
+mmdebstrap \
+linux-headers-$(uname -r) build-essential \
+vim \
+curl \
+libssl-dev \
+bc \
+libelf-dev \
+bison flex \
+genext2fs \
+rsync
+
+
+
 
 # for me
 sudo apt install ripgrep
