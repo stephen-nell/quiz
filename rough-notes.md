@@ -69,7 +69,7 @@ sudo apt install ripgrep
 
 # clone and prep quiz
 cd ~
-mkdir dev
+mkdir dev && cd dev
 git clone https://github.com/stephen-nell/quiz.git
 cd quiz
 
