@@ -2,10 +2,11 @@
 
 
 ## new debian env
+```
 su -l
 apt install sudo
 usermod -aG sudo steve
-
+```
 
 ## prep for zfs build
 ```
