@@ -106,3 +106,12 @@ cd ~/dev/quiz
 
 ## references
 [robs-workflow](https://despairlabs.com/blog/posts/2024-03-04-quiz-rapid-openzfs-development/#start-to-finish)
+```
+$ ./autogen.sh
+$ ~/quiz/quiz-build-zfs configure --enable-debug --enable-debuginfo
+[hack hack hack]
+$ make -j5
+$ ~/quiz/quiz-build-zfs make install
+$ ~/quiz/quiz -p zfs,memdev zpool create tank quizm0 ...
+
+```
