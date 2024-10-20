@@ -6,6 +6,9 @@
 su -l
 apt install sudo
 usermod -aG sudo steve
+
+echo 'alias ll="ls -al"' > ~/.bash_aliases
+source ~/.bashrc 
 ```
 
 ## prep for zfs build
@@ -48,20 +51,17 @@ uuid-dev \
 zlib1g-dev
 ```
 
-## quiz-history
+## quiz setup
 ```
-# needed by quiz - but choose right architecture
 sudo apt install qemu-system-x86
-sudo apt install qemu-system-arm64
+# sudo apt install qemu-system-arm64 (someday?)
 
-
-# these seem to be needed by quiz
+# on an empty debian system, these all seemed to be required
 sudo apt install \
 git \
 mmdebstrap \
 linux-headers-$(uname -r) \
 build-essential \
-vim \
 curl \
 libssl-dev \
 bc \
@@ -70,26 +70,25 @@ bison flex \
 genext2fs \
 rsync
 
-
 # convenience
-sudo apt install ripgrep
+sudo apt install \
+vim \
+ripgrep
 
 # clone and prep quiz
 cd ~
-mkdir dev && cd dev
 git clone https://github.com/stephen-nell/quiz.git
 cd quiz
 
-# set your kernel version in the config
-# but here i just built ___allll___  the kernels
-./quiz-prepare-kernel -K
+uname -r  # in this env it was 6.1.0
+./quiz-prepare-kernel -k 6.1.0
 ./quiz-prepare-root
-./quiz-prepare-work
-./quiz-prepare-work -k 5.10.227
+./quiz-prepare-work  -k 6.1.0
+./quiz  -k 6.1.0 /bin/bash
 ```
 
 
-## and voila -- a zfs dev workflow
+## now see about some zfs tinkering
 ```
 cd ~/dev
 git clone {zfs...}
