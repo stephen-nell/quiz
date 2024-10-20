@@ -1,4 +1,4 @@
-# using quiz for rapid openzfs dev feedback cycles
+# using quiz for openzfs dev 
 
 
 ## new debian env
