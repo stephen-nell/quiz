@@ -59,7 +59,8 @@ sudo apt install qemu-system-arm64
 sudo apt install \
 git \
 mmdebstrap \
-linux-headers-$(uname -r) build-essential \
+linux-headers-$(uname -r) \
+build-essential \
 vim \
 curl \
 libssl-dev \
@@ -70,9 +71,7 @@ genext2fs \
 rsync
 
 
-
-
-# for me
+# convenience
 sudo apt install ripgrep
 
 # clone and prep quiz
