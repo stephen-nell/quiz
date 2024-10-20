@@ -102,22 +102,6 @@ cd ~/dev/quiz
 ```
 
 
-## now see about some zfs tinkering
-```
-cd ~/dev
-git clone {zfs...}
-cd zfs
-./autogen.sh
-~/dev/quiz/quiz-build-zfs -k 5.10.227 configure --enable-debug --enable-debuginfo
-make -j5
-~/dev/quiz/quiz-build-zfs make install
-cd ~/dev/quiz
-./quiz -k 5.10.227  -p zfs,memdev 'zpool create tank quizm0 quizm1 && zpool status && sleep 5'
-
-#or more like this
-sudo /home/steve/dev/quiz/quiz -k 5.10.227 -p zfs,memdev zpool create tank quizm0 quizm1 && zpool status && sleep 5 && /bin/bash
-
-```
 
 
 ## references
