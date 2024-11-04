@@ -118,3 +118,11 @@ $ ~/quiz/quiz-build-zfs make install
 $ ~/quiz/quiz -p zfs,memdev zpool create tank quizm0 ...
 
 ```
+
+
+## on ubuntu - need debian keys
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0E98404D386FA1D9  # Key for Debian package repository
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 54404762BBB6E853  # Key for Debian Security repository (missing key)
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BDE6D2B9216EC7A8  # Another missing key
+```
