@@ -100,7 +100,7 @@ make -j$(nproc)
 make -j$(nproc)
 ~/quiz/quiz-build-zfs make install
 ( cd ~/quiz ; sudo ./quiz -k 6.1.0 -p zfs,memdev 'zpool create tank quizm0 quizm1 && zpool status && sleep 5 && /bin/bash' )
-
+cat /proc/spl/kstat/zfs/dbgmsg
 
 ```
 
